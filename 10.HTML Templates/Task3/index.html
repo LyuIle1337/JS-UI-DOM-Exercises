@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+        integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+        crossorigin="anonymous"></script>
+    <title>HTML Templates</title>
+</head>
+
+<body>
+    <ul id="books-list" data-template="book-item-template"></ul>
+    <script id="book-item-template" type="handlebars">
+        <li class="book-item">
+            <a href="/#books/{{id}}">
+              <strong>{{title}}</strong>
+            </a>
+        </li>	
+    </script>
+    <script src="Scripts/html-templates.task3.js"></script>
+    <script>
+        const data = {
+            books: [{
+                id: 1,
+                title: 'JavaScript: The Good Parts'
+            }, {
+                id: 2,
+                title: 'Secrets of the JavaScript Ninja'
+            }, {
+                id: 3,
+                title: 'Core HTML5 Canvas'
+            }, {
+                id: 4,
+                title: 'JavaScript Patterns'
+            }]
+        };
+        $('#books-list').listview(data);
+    </script>
+</body>
+
+</html>
